@@ -13,14 +13,20 @@ For orders:  [('apples', 3.0)] best shop is shop2
 from __future__ import print_function
 import shop
 
+from functools import reduce
 
-def shopSmart(orderList, fruitShops):
+
+def shopSmart(orderList: list[tuple[str, float]], fruitShops: list[shop.FruitShop]):
     """
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
     """
-    "*** YOUR CODE HERE ***"
-    return None
+    total_prices: dict[shop.FruitShop, float]  = {}
+
+    for fruit_shop in fruitShops:
+        total_prices[fruit_shop] = fruit_shop.getPriceOfOrder(orderList)
+
+    return min(total_prices.items(), key= lambda pair: pair[1])[0]
 
 
 if __name__ == '__main__':

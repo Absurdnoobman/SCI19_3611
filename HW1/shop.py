@@ -5,7 +5,7 @@
 
 class FruitShop:
 
-    def __init__(self, name, fruitPrices):
+    def __init__(self, name: str, fruitPrices: dict[str, float]):
         """
             name: Name of the fruit shop
 
@@ -17,7 +17,7 @@ class FruitShop:
         self.name = name
         print('Welcome to %s fruit shop' % (name))
 
-    def getCostPerPound(self, fruit):
+    def getCostPerPound(self, fruit: str) -> float | None:
         """
             fruit: Fruit string
         Returns cost of 'fruit', assuming 'fruit'
@@ -27,7 +27,7 @@ class FruitShop:
             return None
         return self.fruitPrices[fruit]
 
-    def getPriceOfOrder(self, orderList):
+    def getPriceOfOrder(self, orderList: list[tuple[str, float]]) -> float:
         """
             orderList: List of (fruit, numPounds) tuples
 
@@ -41,11 +41,11 @@ class FruitShop:
                 totalCost += numPounds * costPerPound
         return totalCost
 
-    def getName(self):
+    def getName(self) -> str:
         return self.name
 
-    def __str__(self):
+    def __str__(self) -> str:
         return "<FruitShop: %s>" % self.getName()
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self)

@@ -19,7 +19,7 @@ fruitPrices = {'apples': 2.00, 'oranges': 1.50, 'pears': 1.75,
                'limes': 0.75, 'strawberries': 1.00}
 
 
-def buyLotsOfFruit(orderList):
+def buyLotsOfFruit(orderList: list[tuple[str, float]]):
     """
         orderList: List of (fruit, numPounds) tuples
 
@@ -27,7 +27,7 @@ def buyLotsOfFruit(orderList):
     """
     totalCost = 0.0
     for order in orderList:
-        totalCost += order[0] * order[1]
+        totalCost += fruitPrices[order[0]] * order[1]
 
     return totalCost
 
