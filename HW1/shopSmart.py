@@ -26,7 +26,7 @@ def shopSmart(orderList: list[tuple[str, float]], fruitShops: list[shop.FruitSho
     for fruit_shop in fruitShops:
         total_prices[fruit_shop] = fruit_shop.getPriceOfOrder(orderList)
 
-    return min(total_prices.items(), key= lambda pair: pair[1])[0]
+    return min(total_prices.items(), key= lambda pair: pair[1])[0] # return the FruitShop object with the lowest price.
 
 
 if __name__ == '__main__':

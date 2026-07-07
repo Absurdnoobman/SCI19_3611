@@ -15,8 +15,11 @@ Cost of [('apples', 2.0), ('pears', 3.0), ('limes', 4.0)] is 12.25
 """
 from __future__ import print_function
 
-fruitPrices = {'apples': 2.00, 'oranges': 1.50, 'pears': 1.75,
-               'limes': 0.75, 'strawberries': 1.00}
+
+fruitPrices = {
+    'apples': 2.00, 'oranges': 1.50, 'pears': 1.75,
+    'limes': 0.75, 'strawberries': 1.00
+}
 
 
 def buyLotsOfFruit(orderList: list[tuple[str, float]]):
@@ -25,6 +28,11 @@ def buyLotsOfFruit(orderList: list[tuple[str, float]]):
 
     Returns cost of order
     """
+    for order in orderList:
+        if order[0] not in fruitPrices.keys():
+            print(f"There is no {order[0]} for sell. removed from the order list.")
+            orderList.remove(order)
+
     totalCost = 0.0
     for order in orderList:
         totalCost += fruitPrices[order[0]] * order[1]

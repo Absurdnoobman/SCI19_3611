@@ -1,8 +1,6 @@
 # shop.py
 # -------
 
-
-
 class FruitShop:
 
     def __init__(self, name: str, fruitPrices: dict[str, float]):
