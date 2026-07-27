@@ -13,9 +13,6 @@ For orders:  [('apples', 3.0)] best shop is shop2
 from __future__ import print_function
 import shop
 
-from functools import reduce
-
-
 def shopSmart(orderList: list[tuple[str, float]], fruitShops: list[shop.FruitShop]):
     """
         orderList: List of (fruit, numPound) tuples
